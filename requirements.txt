@@ -1,0 +1,29 @@
+# Azure SDKs
+azure-storage-blob==12.13.0
+azure-storage-queue==12.3.0
+azure-ai-formrecognizer==3.2.0b2
+azure-search-documents==11.4.0
+azure-core==1.26.0
+azure-identity==1.10.0
+
+# Langchain for document loading and text splitting
+langchain==0.0.153
+
+# TQDM for progress bars
+tqdm==4.64.1
+
+# PDF processing
+pymupdf==1.22.1  # PyMuPDF for PDF reading
+pillow==9.2.0    # PIL for image processing
+
+# Environment variable handling
+python-dotenv==0.21.0
+
+# OpenAI for embeddings
+openai==0.27.2
+
+# Requests for HTTP requests
+requests==2.28.1
+
+# JSON and data handling
+json5==0.9.8
