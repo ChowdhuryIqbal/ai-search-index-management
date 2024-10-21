@@ -17,7 +17,7 @@ This Python project helps manage Azure AI Search Index by uploading, indexing, a
 - **Python:** Python 3.7 or later
 - **Azure Services:**
   - Azure Blob Storage
-  - Azure Cognitive Search
+  - Azure AI Search
   - Azure Form Recognizer
   - Azure OpenAI API (GPT-4 Vision)
 
@@ -50,7 +50,7 @@ This Python project helps manage Azure AI Search Index by uploading, indexing, a
     # Azure Blob Storage
     BlobConnectionString=<BLOB_CONNECTION_STRING>
 
-    # Azure Cognitive Search
+    # Azure AI Search
     SearchServiceName=<SEARCH_SERVICE_NAME>
     SearchAdminKey=<SEARCH_ADMIN_KEY>
 
@@ -77,13 +77,12 @@ Running the code supports two main operations: uploading documents to the Azure 
 
 To upload and index new PDF documents from a blob storage container to the Azure AI Search Index, run:
 
-    ```bash
+
     python -m index_management.main upload <index_name> <container_name>
-    ```
 
 Where:
 
-- `<index_name>` is the name of the Azure Cognitive Search index (for example, `sample_index`).
+- `<index_name>` is the name of the Azure AI Search index (for example, `sample_index`).
 - `<container_name>` is the name of the Azure Blob Storage container holding the PDF files (for example, `sample-docs`).
 
 Example:
@@ -102,7 +101,7 @@ To delete specific documents from the Azure AI Search Index, based on the blob n
 
 Where:
 
-- `<index_name>` is the name of the Azure Cognitive Search index.
+- `<index_name>` is the name of the Azure AI Search index.
 - `<container_name>` is the name of the blob storage container.
 - `<blob_name_1>` and `<blob_name_2>` are the names of the specific blobs (PDF files) to be deleted from the index.
 
@@ -119,7 +118,7 @@ The `.env` file should contain the following environment variables to enable the
     # Azure Blob Storage
     BlobConnectionString=<BLOB_CONNECTION_STRING>
 
-    # Azure Cognitive Search
+    # Azure AI Search
     SearchServiceName=<SEARCH_SERVICE_NAME>
     SearchAdminKey=<SEARCH_ADMIN_KEY>
 
@@ -144,7 +143,7 @@ Here’s a breakdown of the file structure:
 
 - `main.py`: Handles command-line arguments and calls other modules to perform operations.
 - `blob_handler.py`: Manages interactions with Azure Blob Storage.
-- `search_index.py`: Contains functions for creating, uploading, and deleting documents in the Azure Cognitive Search index.
+- `search_index.py`: Contains functions for creating, uploading, and deleting documents in the Azure AI Search index.
 - `pdf_processor.py`: Processes PDFs (table extraction, images, embeddings).
 - `gpt4v_handler.py`: Handles GPT-4 Vision image analysis.
 - `utils.py`: Contains utility functions for chunking text, reading blob contents, etc.
